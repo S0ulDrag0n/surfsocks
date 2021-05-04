@@ -12,7 +12,7 @@ This image was inspired by and based on the following:
 
 # Usage
 
-**Usage**
+**Docker Run**
 ```
 docker run -d \
     --cap-add=NET_ADMIN \
@@ -25,6 +25,7 @@ docker run -d \
     -e PRIVATE_NET=<lan ipv4 network>/<cidr notation> \
     s0uldrag0n/surfsocks
 ```
+**Docker Compose**
 ```
 version: '3'
 
