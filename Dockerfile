@@ -2,7 +2,7 @@ FROM alpine:latest
 
 ENV VPN_FILE=/surfshark/nl-ams.prod.surfshark.com_udp.ovpn
 # The CIDR mask of the local IP addresses (e.g. 192.168.1.0/24, 10.1.1.0/24) which will be acessing the proxy. This is so the response to a request>
-ENV PRIVATE_NET=10.61.46.0/24
+ENV PRIVATE_NET=192.168.1.0/24
 
 # Install openvpn, privoxy, supervisor (run more than one service in Docker), and utilities
 RUN apk add curl unzip openvpn privoxy dumb-init supervisor && mkdir /privoxy
