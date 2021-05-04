@@ -1,0 +1,11 @@
+#!/bin/sh
+
+sleep 10s
+
+echo "Starting Privoxy"
+
+# so return traffic that went through VPN works
+gw=$(ip route | awk '/default/ {print $3}')
+ip route add to ${PRIVATE_NET} via $gw dev eth0
+
+privoxy --no-daemon /etc/privoxy/config
